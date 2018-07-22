@@ -9,7 +9,8 @@ body,td,th,p{
 }
 body {
 	background-color: #fdfdfd;
-	margin: 0;
+  margin: 0;
+  height: 100%;
 	position:relative;
 }
 ul, li {
@@ -37,7 +38,8 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 }
 #maincontent {
   background-color: #f3f3f3;
-  min-height: 100%;
+  /* margin-top: -130px; */
+  height: 100%;
 }
 #footer {
   background-color: #444;
@@ -46,6 +48,9 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   letter-spacing: 1px;
   padding: 25px;
   text-align: center;
+  position: absolute;
+  bottom:0;
+  width: 100%;
   text-transform: uppercase;
 }
 /* ====================== Navigation ====================== */
@@ -71,7 +76,7 @@ nav h1 a {
     background-color: #eee;
     font-size: 17px;
     margin: 0;
-    width: calc(50% - 80px);
+    /* width: calc(50% - 80px); */
 }
 
 /* Display list items side by side */
@@ -132,8 +137,9 @@ nav h1 a {
 /* ====================== Restaurant Listing ====================== */
 #restaurants-list {
   background-color: #f3f3f3;
-  list-style: outside none none;
-  margin: 0;
+  list-style: inside none none;
+  margin: 0 auto;
+  /* height: 100%; */
   padding: 30px 15px 60px;
   text-align: center;
 }
@@ -141,11 +147,11 @@ nav h1 a {
   background-color: #fff;
   border: 2px solid #ccc;
   font-family: Arial,sans-serif;
-  margin: 15px;
-  min-height: 380px;
-  padding: 0 30px 25px;
+  margin: 25px;
+  /* min-height: 380px; */
+  padding: 20px 20px 25px;
   text-align: left;
-  width: 270px;
+  /* width: 270px; */
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;
@@ -272,4 +278,54 @@ nav h1 a {
 }
 #restaurant-hours td {
   color: #666;
+}
+.container {
+  width: 100%;
+  height: auto;
+}
+.col-3 {
+  float: left;  
+  width: calc(33.3% - 15px);
+}
+/* ---- Media Queries ---- */
+
+@media only screen and (max-width: 749px) {
+  .full-width {
+    width: 100%;
+  }
+  .col-3 {
+    width: calc(100% - 95px);
+    margin: 0 auto;
+  }
+  #map-container {
+    margin-top: 130px;
+    height: 600px;
+  }
+  #maincontent {
+    margin-top: -130px;
+  }
+  .inside #map-container {
+    background: blue none repeat scroll 0 0;
+    height: 600px;
+    right: 0;
+    top: 135px;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 750px) and (max-width: 1100px) {
+  .full-width {
+    width: 100%;
+  }
+  .col-3 {
+    width: calc(50% - 95px);
+    margin: 0 auto;
+  }
+  #map-container {
+    margin-top: 130px;
+    height: 600px;
+  }
+  #maincontent {
+    margin-top: -130px;
+  }
 }
