@@ -148,8 +148,11 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
  */
 createReviewHTML = (review) => {
   const li = document.createElement('li');
+
   const name = document.createElement('p');
   name.innerHTML = review.name;
+  name.style.color = '#f18200';
+  name.style.fontSize = '1.2em';
   li.appendChild(name);
 
   const date = document.createElement('p');
