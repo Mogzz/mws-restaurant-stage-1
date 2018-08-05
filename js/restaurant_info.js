@@ -148,23 +148,27 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
  */
 createReviewHTML = (review) => {
   const li = document.createElement('li');
-
+  li.setAttribute('tabindex','0');
   const name = document.createElement('p');
   name.innerHTML = review.name;
   name.style.color = '#f18200';
   name.style.fontSize = '1.2em';
+  name.setAttribute('tabindex','0');
   li.appendChild(name);
 
   const date = document.createElement('p');
   date.innerHTML = review.date;
+  date.setAttribute('tabindex','0');
   li.appendChild(date);
 
   const rating = document.createElement('p');
   rating.innerHTML = `Rating: ${review.rating}`;
+  rating.setAttribute('tabindex','0');
   li.appendChild(rating);
 
   const comments = document.createElement('p');
   comments.innerHTML = review.comments;
+  comments.setAttribute('tabindex','0');
   li.appendChild(comments);
 
   return li;
